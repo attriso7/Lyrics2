@@ -1,6 +1,5 @@
 package com.eminem.lyrics.adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,36 +8,37 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.eminem.lyrics.R;
-import com.eminem.lyrics.model.Song;
+import com.eminem.lyrics.models.Song;
 import com.eminem.lyrics.ui.LyricsActivity;
 import java.util.List;
 
 public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder> {
-    private final List<Song> songList;
-    private final Context context;
+    private List<Song> songList;
 
-    public SongAdapter(List<Song> songList, Context context) {
+    public SongAdapter(List<Song> songList) {
         this.songList = songList;
-        this.context = context;
     }
 
     @NonNull
     @Override
     public SongViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_song, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_song, parent, false);
         return new SongViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SongViewHolder holder, int position) {
         Song song = songList.get(position);
-        holder.songName.setText(song.getName());
+        holder.songTitle.setText(song.getTitle());
+        holder.albumName.setText(song.getAlbum());
 
+        // Open LyricsActivity when an item is clicked
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, LyricsActivity.class);
-            intent.putExtra("song_name", song.getName());
+            Intent intent = new Intent(v.getContext(), LyricsActivity.class);
+            intent.putExtra("song_name", song.getTitle());  // Ensure key matches LyricsActivity.java
             intent.putExtra("lyrics", song.getLyrics());
-            context.startActivity(intent);
+            v.getContext().startActivity(intent);
         });
     }
 
@@ -47,12 +47,19 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
         return songList.size();
     }
 
-    public static class SongViewHolder extends RecyclerView.ViewHolder {
-        TextView songName;
+    // Method to update the song list dynamically for search filtering
+    public void updateList(List<Song> newList) {
+        songList = newList;
+        notifyDataSetChanged();
+    }
 
-        public SongViewHolder(@NonNull View itemView) {
+    static class SongViewHolder extends RecyclerView.ViewHolder {
+        TextView songTitle, albumName;
+
+        public SongViewHolder(View itemView) {
             super(itemView);
-            songName = itemView.findViewById(R.id.songName);
+            songTitle = itemView.findViewById(R.id.songTitle);
+            albumName = itemView.findViewById(R.id.albumName);
         }
     }
 }

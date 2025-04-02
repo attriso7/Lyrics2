@@ -13,4 +13,15 @@
         <item name="colorAccent">#2563EB</item> <!-- Vibrant Blue -->
         <item name="android:colorButtonNormal">#AE72E6</item> <!-- Dark Blue Button -->
     </style>
-</resources>
+
+    <style name="Theme.EminemLyrics.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.EminemLyrics.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.EminemLyrics.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+        </resources>

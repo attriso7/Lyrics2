@@ -4,54 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/primary">
+    android:background="@color/black">
 
     <TextView
         android:id="@+id/songTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:paddingBottom="10dp" />
+        android:text="Song Title" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/lyricsText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:padding="10dp" />
-    </ScrollView>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/lyricsText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:text="Lyrics will appear here..."
+        android:paddingTop="10dp" />
 
-        <Button
-            android:id="@+id/copyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Copy Lyrics"
-            android:padding="8dp"
-            android:backgroundTint="@color/blue" />
+    <Button
+        android:id="@+id/copyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copy Lyrics"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"/>
 
-        <Button
-            android:id="@+id/shareButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Share"
-            android:padding="8dp"
-            android:backgroundTint="@color/blue"
-            android:layout_marginStart="10dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Lyrics"
+        android:background="@color/teal_200"
+        android:textColor="@android:color/black"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"/>
+
 </LinearLayout>

@@ -3,4 +3,8 @@
     <string name="album_list_title">Albums</string>
     <string name="song_list_title">Songs</string>
     <string name="lyrics_title">Lyrics</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="action_settings">Settings</string>
 </resources>
