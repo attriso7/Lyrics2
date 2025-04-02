@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/albums">
+
+    <fragment
+        android:id="@+id/albums"
+        android:name="com.eminem.lyrics.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_albums_to_songs"
+            app:destination="@id/songs" />
+        <action
+            android:id="@+id/action_albums_to_featuring"
+            app:destination="@id/featuring" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/songs"
+        android:name="com.eminem.lyrics.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/featuring"
+        android:name="com.eminem.lyrics.ui.sas.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>

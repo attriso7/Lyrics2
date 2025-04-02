@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.EminemLyrics" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#1E3A8A</item> <!-- Deep Blue -->
+        <item name="colorPrimaryVariant">#172554</item> <!-- Darker Blue -->
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:colorBackground">#000000</item>
+
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#B0B0B0</item>
+
+        <item name="colorAccent">#2563EB</item> <!-- Vibrant Blue -->
+        <item name="android:colorButtonNormal">#AE72E6</item> <!-- Dark Blue Button -->
+    </style>
+</resources>
